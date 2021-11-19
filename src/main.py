@@ -15,7 +15,6 @@ from reconnaissance import reconnaissance_chiffre, lecture_modeles
 
 
 if __name__ == '__main__':
-
     # Variables utiles
     path_to_assets = '../assets/'
     plt.ion() # Mode interactif de matplotlib our ne pas bloquer l'éxécutions lorsque l'on fait display
@@ -24,13 +23,13 @@ if __name__ == '__main__':
     # Lecture image et affichage
     #==============================================================================
     image = Image()
-    image.load(path_to_assets + 'test2.JPG')
+    image.load(path_to_assets + 'test3.JPG')
     image.display("Exemple d'image")
 
     #==============================================================================
     # Binarisation de l'image et affichage
     #==============================================================================
-    S = 70
+    S = 100
     image_binarisee = image.binarisation(S)
     image_binarisee.display("Image binarisee")
 
@@ -43,7 +42,7 @@ if __name__ == '__main__':
     #==============================================================================
     # Redimensionnement de l'image et affichage
     #==============================================================================
-    image_resizee = image_localisee.resize(100, 500)
+    image_resizee = image_localisee.resize(100, 200)
     image_resizee.display("Image redimensionee")
 
     #==============================================================================
@@ -52,3 +51,5 @@ if __name__ == '__main__':
     liste_modeles = lecture_modeles(path_to_assets)
     chiffre = reconnaissance_chiffre(image, liste_modeles, 70)
     print("Le chiffre reconnu est : ", chiffre)
+
+
